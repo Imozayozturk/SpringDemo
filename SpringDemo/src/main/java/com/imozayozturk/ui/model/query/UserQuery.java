@@ -1,10 +1,13 @@
-package com.imozayozturk.ui.model.command;
+package com.imozayozturk.ui.model.query;
 
 import lombok.Getter;
 import lombok.Setter;
 
-public class UserC {
+public class UserQuery {
 
+	@Getter
+	@Setter
+	private String userId;
 	@Getter
 	@Setter
 	private String name;
@@ -14,8 +17,4 @@ public class UserC {
 	@Getter
 	@Setter
 	private String email;
-	@Getter
-	@Setter
-	private String password;
-
 }
