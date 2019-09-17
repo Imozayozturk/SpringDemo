@@ -12,21 +12,21 @@ import com.imozayozturk.repository.IUserRepository;
 @Service
 public class UserService implements IUserService {
 
-	@Autowired
-	private IUserRepository userRepository;
+    @Autowired
+    private IUserRepository userRepository;
 
-	@Override
-	public UserDto createUser(UserDto userDto) {
+    @Override
+    public UserDto createUser(UserDto userDto) {
 
-		UserEntity userEntity = new UserEntity();
-		BeanUtils.copyProperties(userDto, userEntity);
+        UserEntity userEntity = new UserEntity();
+        BeanUtils.copyProperties(userDto, userEntity);
 
-		UserEntity savedEntity = userRepository.save(userEntity);
+        UserEntity savedEntity = userRepository.save(userEntity);
 
-		UserDto result = new UserDto();
-		BeanUtils.copyProperties(savedEntity, result);
+        UserDto result = new UserDto();
+        BeanUtils.copyProperties(savedEntity, result);
 
-		return result;
-	}
+        return result;
+    }
 
 }
